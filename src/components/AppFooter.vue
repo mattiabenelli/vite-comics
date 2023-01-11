@@ -5,11 +5,19 @@ export default {
 </script>
 
 <template lang="">
-  <div>
-    
-  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-shop"></div>
+      <div class="footer-social"></div>
+    </div>
+  </footer>
 </template>
 
-<style lang="">
+<style lang="scss">
+
+  .footer-container{
+    @include borderPage;
+    border: 1px solid black;
+  }
   
 </style>
