@@ -6,18 +6,27 @@ export default {
 
 <template lang="">
   <footer>
-    <div class="footer-container">
-      <div class="footer-shop"></div>
-      <div class="footer-social"></div>
-    </div>
+      <div class="footer-shop">
+        <div class="footer-container"></div>
+      </div>
+      <div class="footer-social">
+        <div class="footer-container"></div>
+      </div>
   </footer>
 </template>
 
 <style lang="scss">
+  @use '../styles/partials/variables' as * ;
+  @use '../styles/partials/mixins' as * ;
 
   .footer-container{
     @include borderPage;
-    border: 1px solid black;
   }
+  .footer-shop{
+    background-image: url('../assets/img/footer-bg.jpg');
+    background-size: cover;
+    height: 800px;
+  }
+
   
 </style>
