@@ -33,7 +33,7 @@ export default {
   <footer>
       <div class="blue-section">
         <div class="footer-container">
-          <div v-for="(item,index) in ImagesBlueSection" :key="index">
+          <div v-for="(item,index) in imagesBlueSection" :key="index">
             <img :src="`/img/${item.image}`" alt="">
           </div>
         </div>
@@ -63,6 +63,13 @@ export default {
     background-image: url('/img/footer-bg.jpg');
     background-size: cover;
     height: 800px;
+  }
+  .blue-section{
+    background-color: $DCblue;
+      .footer-container{
+        @include flex-align;
+        justify-content:space-between
+      }
   }
 
   

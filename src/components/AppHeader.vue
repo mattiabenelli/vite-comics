@@ -68,7 +68,7 @@ export default {
       <nav>
         <ul>
           <li v-for="(item,index) in navbarMenu" :key="index">
-            <a :href="item.url" :class="(item.active == true) ? 'active' : ''">{{ item.label }}</a>
+            <a :href="item.url" v-bind:class="(item.active == true) ? 'active' : ''">{{ item.label }}</a>
           </li>
         </ul>
       </nav>
