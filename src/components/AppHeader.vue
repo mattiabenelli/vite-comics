@@ -67,8 +67,8 @@ export default {
       </a>
       <nav>
         <ul>
-          <li v-for="(item,index) in navbarMenu" :key="index">
-            <a :href="item.url" v-bind:class="(item.active == true) ? 'active' : ''">{{ item.label }}</a>
+          <li v-for="(item,index) in navbarMenu" :key="index" v-bind:class="(item.active == true) ? 'active' : ''">
+            <a :href="item.url">{{ item.label }}</a>
           </li>
         </ul>
       </nav>
@@ -98,6 +98,7 @@ export default {
     li{
       height: 100%;
       @include flex-align;
+      border-bottom: 5px solid white ;
       a{
         display: inline-block;
       margin: 1rem;
