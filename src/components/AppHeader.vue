@@ -63,12 +63,12 @@ export default {
   <header>
     <div class="header-container">
       <a href="/" class="brand">
-        <img src="../assets/img/dc-logo.png" alt="" srcset="">
+        <img src="/img/dc-logo.png" alt="" srcset="">
       </a>
       <nav>
         <ul>
           <li v-for="(item,index) in navbarMenu" :key="index">
-            <a :href="item.url" :class="item.active ? 'active' : ''">{{ item.label }}</a>
+            <a :href="item.url" :class="(item.active == true) ? 'active' : ''">{{ item.label }}</a>
           </li>
         </ul>
       </nav>
@@ -79,6 +79,7 @@ export default {
 <style lang="scss">
   @use '../styles/partials/variables' as * ;
   @use '../styles/partials/mixins' as * ;
+
   
   header {
     background-color: white;
@@ -86,22 +87,28 @@ export default {
     nav{
       display: flex;
       justify-content: flex-end;
+      height: 100%;
     }
 
     ul{
       list-style: none;
-      display: flex;
+      height: 100%;
+      @include flex-align
     }
-    li a{
-      display: inline-block;
+    li{
+      height: 100%;
+      @include flex-align;
+      a{
+        display: inline-block;
       margin: 1rem;
       text-decoration: none;
       color: $GreyTextColor;
       transition: border-bottom 0.3s;
       font-weight: bold;
+      }
 
       &.active,&:hover{
-        border-bottom: 1px solid $DCblue;
+        border-bottom: 5px solid $DCblue;
         color: $DCblue
       }
 
@@ -109,8 +116,9 @@ export default {
   }
 
   .header-container {
-    @include centeredItems;
+    @include flex-align;
     @include borderPage;
-    padding: 20px 0;
+    height: 150px;
+    justify-content: space-between;
   } 
 </style>
