@@ -33,8 +33,9 @@ export default {
   <footer>
       <div class="blue-section">
         <div class="footer-container">
-          <div v-for="(item,index) in imagesBlueSection" :key="index">
+          <div class="blue-section-links" v-for="(item,index) in imagesBlueSection" :key="index">
             <img :src="`/img/${item.image}`" alt="">
+            <div class="blue-section-links-text">{{ item.label }}</div>
           </div>
         </div>
       </div>
@@ -66,9 +67,20 @@ export default {
   }
   .blue-section{
     background-color: $DCblue;
+    padding: 40px 0;
       .footer-container{
         @include flex-align;
         justify-content:space-between
+      }
+      .blue-section-links{
+        @include flex-align;
+        color: white;
+          img{
+            height: 100px;
+          }
+      }
+      .blue-section-links-text{
+        padding-left: 10px;
       }
   }
 
